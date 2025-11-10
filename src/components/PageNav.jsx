@@ -24,23 +24,23 @@ function PageNavMobile() {
         <img
           src="/images/aspoi-logo.png"
           alt="logo"
-          className="w-[5rem] h-[5rem] mt-2 ml-5"
+          className="w-20 h-20 mt-2 ml-5"
         />
       </div>
       <div className="">
-        <div className="w-10 h-8 absolute right-[2rem] top-[2rem]">
-          <div className="bg-[#feff00] w-8 h-1.5 m-[2px] rounded-[5px]"></div>
-          <div className="bg-[#feff00] w-8 h-1.5 m-[2px] rounded-[5px]"></div>
-          <div className="bg-[#feff00] w-8 h-1.5 m-[2px] rounded-[5px]"></div>
+        <div className="w-10 h-8 absolute right-8 top-8">
+          <div className="bg-[#feff00] w-8 h-1.5 m-0.5 rounded-[5px]"></div>
+          <div className="bg-[#feff00] w-8 h-1.5 m-0.5 rounded-[5px]"></div>
+          <div className="bg-[#feff00] w-8 h-1.5 m-0.5 rounded-[5px]"></div>
         </div>
         <input
           type="checkbox"
           ref={checkboxRef}
-          className="w-10 h-8 absolute right-[2rem] top-[2rem] peer cursor-pointer opacity-0"
+          className="w-10 h-8 absolute right-8 top-8 peer cursor-pointer opacity-0"
         />
         <ul
-          className="bg-black w-[20rem] h-0 absolute right-[2rem] top-[6rem] peer-checked:h-[20rem]
-                       overflow-hidden transition-all duration-300 ease-in-out font-aldrich text-center"
+          className="bg-black w-[20rem] h-0 absolute right-8 top-24 peer-checked:h-80
+                       overflow-hidden transition-all duration-500 ease-in-out font-aldrich text-center opacity-0 peer-checked:opacity-100"
         >
           <li>
             <NavLink
@@ -158,10 +158,10 @@ function PageNavDesktop() {
         <img
           src="/images/aspoi-logo.png"
           alt="logo"
-          className="w-[5rem] h-[5rem] mt-2 ml-5"
+          className="w-20 h-20 mt-2 ml-5"
         />
       </div>
-      <ul className="flex flex-8 gap-[20px] items-center justify-end-safe">
+      <ul className="flex flex-8 gap-5 items-center justify-end-safe">
         <li>
           <NavLink
             to="/"

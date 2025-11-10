@@ -9,8 +9,13 @@
 }
 @theme{
   --font-aldrich: Aldrich, "sanserif";
-  --font-roboto: Roboto. "sanserif"
+  --font-roboto: Roboto, "sanserif"
 }
+
+::selection {
+      background-color: #ff3d00;
+      color: #ffffff;
+    }
 
 @import "tailwindcss"
 
