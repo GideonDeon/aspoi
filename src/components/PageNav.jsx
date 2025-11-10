@@ -39,16 +39,17 @@ function PageNavMobile() {
           className="w-10 h-8 absolute right-8 top-8 peer cursor-pointer opacity-0"
         />
         <ul
-          className="bg-black w-[20rem] h-0 absolute right-8 top-24 peer-checked:h-80
-                       overflow-hidden transition-all duration-500 ease-in-out font-aldrich text-center opacity-0 peer-checked:opacity-100"
+          className="bg-black w-0 h-70 absolute right-0 top-24 peer-checked:w-[20rem]
+                       overflow-hidden transition-all duration-500 ease-in-out font-aldrich text-left
+                       pl-3.5 opacity-0 peer-checked:opacity-100 z-5"
         >
           <li>
             <NavLink
               to="/"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -60,8 +61,8 @@ function PageNavMobile() {
               to="/about"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -73,8 +74,8 @@ function PageNavMobile() {
               to="/membership"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -86,8 +87,8 @@ function PageNavMobile() {
               to="/ppa-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -99,8 +100,8 @@ function PageNavMobile() {
               to="/cpid-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -112,8 +113,8 @@ function PageNavMobile() {
               to="/dsi-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -125,8 +126,8 @@ function PageNavMobile() {
               to="/members"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -138,8 +139,8 @@ function PageNavMobile() {
               to="/register"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-full h-8 pt-1 mt-2 block hover:bg-white hover:text-black font-aldrich ${
-                  isActive ? "bg-white text-red-500" : "text-white"
+                `w-fit h-8 pt-1  block font-aldrich ${
+                  isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
             >
@@ -161,7 +162,7 @@ function PageNavDesktop() {
           className="w-20 h-20 mt-2 ml-5"
         />
       </div>
-      <ul className="flex flex-8 gap-5 items-center justify-end-safe">
+      <ul className="flex flex-8 gap-5 items-center justify-end-safe pr-3">
         <li>
           <NavLink
             to="/"
