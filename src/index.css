@@ -7,15 +7,14 @@
   font-family: Roboto;
   src: url("./assets/fonts/Roboto-Light.ttf");
 }
-@theme{
+@theme {
   --font-aldrich: Aldrich, "sanserif";
-  --font-roboto: Roboto, "sanserif"
+  --font-roboto: Roboto, "sanserif";
 }
 
 ::selection {
-      background-color: #ff3d00;
-      color: #ffffff;
-    }
+  background-color: #ff3d00;
+  color: #ffffff;
+}
 
-@import "tailwindcss"
-
+@import "tailwindcss";
