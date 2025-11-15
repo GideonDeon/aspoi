@@ -25,7 +25,7 @@ function Header() {
     <div
       className="bg-[url(/images/security.png)] bg-no-repeat bg-position-[30%_100%] 
                     sm:bg-position-[0%_80%] bg-cover bg-black/70 bg-blend-color h-120 sm:h-152 
-                    w-full text-white p-10 font-roboto"
+                    w-full text-white p-10 font-roboto font-extrabold"
     >
       <h1 className="text-3xl text-center mb-5 sm:text-4xl sm:mt-20 md:text-6xl md:mt-30">
         ASSOCIATION OF SAFETY AND PROTECTION OFFICERS INTERNATIONAL (ASPOI)
@@ -94,7 +94,7 @@ function BodyOne() {
       <h1 className="font-bold font-aldrich text-2xl text-center ">
         WHAT WE DO
       </h1>
-      <p className="text-justify p-2.5 md:text-[20px] lg:text-center">
+      <p className="text-justify p-2.5 lg:pl-20 lg:pr-20 md:text-[20px] lg:text-center">
         The association of safety and protection officers international is a
         registered association of personnel (serving and retired) and other
         individual with the passion, vision and mission of creating an enabling
