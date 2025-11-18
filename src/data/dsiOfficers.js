@@ -2,103 +2,86 @@ export const dsiOfficers = [
   {
     id: 1,
     image: "/images/dsi/dsi2401.jpg",
-    name: "AKINWUMI GIDEON",
-    link: "dsi2401.html",
+    name: "AKINWUMI GIDEON"
   },
   {
     id: 2,
     image: "/images/dsi/dsi2403.jpg",
-    name: "FEYISHOLA BELLO",
-    link: "dsi2403.html",
+    name: "FEYISHOLA BELLO"
   },
   {
     id: 3,
     image: "/images/dsi/dsi2404.jpg",
-    name: "ERIC KWAKU NYAME AMEVOR",
-    link: "dsi2404.html",
+    name: "ERIC KWAKU NYAME AMEVOR"
   },
   {
     id: 4,
     image: "/images/dsi/dsi2405.jpg",
-    name: "EHINMITAN BIDEMI OLANREWAJU",
-    link: "dsi2405.html",
+    name: "EHINMITAN BIDEMI OLANREWAJU"
   },
   {
     id: 5,
     image: "/images/dsi/dsi2408.jpg",
-    name: "ANSELEM OFFOR",
-    link: "dsi2408.html",
+    name: "ANSELEM OFFOR"
   },
   {
     id: 6,
     image: "/images/dsi/dsi2410.jpg",
-    name: "ABUBAKAR MUHAMMED ADAJI",
-    link: "dsi2410.html",
+    name: "ABUBAKAR MUHAMMED ADAJI"
   },
   {
     id: 7,
     image: "/images/dsi/dsi2411.jpg",
-    name: "GANIYU OLALEKAN ADEOBA",
-    link: "dsi2411.html",
+    name: "GANIYU OLALEKAN ADEOBA"
   },
   {
     id: 8,
     image: "/images/dsi/dsi2414.jpg",
-    name: "OMOLA ADEKUNLE HENRY",
-    link: "dsi2414.html",
+    name: "OMOLA ADEKUNLE HENRY"
   },
   {
     id: 9,
     image: "/images/dsi/dsi2417.jpg",
-    name: "OSUNDE MICHAEL IYOBOSA",
-    link: "dsi2417.html",
+    name: "OSUNDE MICHAEL IYOBOSA"
   },
   {
     id: 10,
     image: "/images/dsi/dsi2419.jpg",
-    name: "GBENGA ADEBOWALE",
-    link: "dsi2419.html",
+    name: "GBENGA ADEBOWALE"
   },
   {
     id: 11,
     image: "/images/dsi/dsi2422.jpg",
-    name: "JIMOH OMEIZA",
-    link: "dsi2422.html",
+    name: "JIMOH OMEIZA"
   },
   {
     id: 12,
     image: "/images/dsi/dsi2435.jpg",
-    name: "SAMUEL LAMPTEY",
-    link: "dsi2435.html",
+    name: "SAMUEL LAMPTEY"
   },
   {
     id: 13,
     image: "/images/dsi/dsi2441.jpg",
-    name: "OLAYINKA OLAWALE KEMI",
-    link: "dsi2441.html",
+    name: "OLAYINKA OLAWALE KEMI"
   },
   {
     id: 14,
     image: "/images/dsi/dsi2448.jpg",
-    name: "OKEYOMI BABATUNDE",
-    link: "dsi2448.html",
+    name: "OKEYOMI BABATUNDE"
   },
   {
     id: 15,
     image: "/images/dsi/dsi2451.jpg",
-    name: "OLUYOMI ESTHER",
-    link: "dsi2451.html",
+    name: "OLUYOMI ESTHER"
   },
   {
     id: 16,
     image: "/images/dsi/dsi2452.jpg",
-    name: "BOLARINWA DEBORAH",
-    link: "dsi2452.html",
+    name: "BOLARINWA DEBORAH"
   },
   {
-    id: 16,
+    id: 17,
     image: "/images/dsi/dsi2453.jpg",
-    name: "JACKIE ADUNNI KASSIM",
-    link: "dsi2453.html",
+    name: "JACKIE ADUNNI KASSIM"
   },
 ];

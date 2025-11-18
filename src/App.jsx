@@ -7,6 +7,11 @@ import CPIDprofessionals from "./pages/CPIDprofessionals";
 import DSIprofessionals from "./pages/DSIprofessionals";
 import Members from "./pages/Members";
 import Register from "./pages/Register";
+import DSIpersonaldeltail from "./pages/DSIpersonaldetail";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fas);
 
 function App() {
   return (
@@ -20,6 +25,7 @@ function App() {
         <Route path="dsi-professionals" element={<DSIprofessionals />} />
         <Route path="members" element={<Members />} />
         <Route path="register" element={<Register />} />
+        <Route path="dsi/:id" element={<DSIpersonaldeltail />} />
       </Routes>
     </BrowserRouter>
   );

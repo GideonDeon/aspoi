@@ -2,10 +2,6 @@ import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-
-library.add(fas);
 
 function Homepage() {
   return (
