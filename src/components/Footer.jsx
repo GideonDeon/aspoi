@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
@@ -23,178 +25,201 @@ function FooterMain() {
     </div>
   );
 }
+
 function Contact() {
   return (
-    <div className="text-white">
-      <h1 className="text-center text-3xl font-aldrich uppercase lg:mt-2.5">
-        Contact Us
-      </h1>
-      <div className="font-roboto">
-        <span className="block w-full text-center">
-          <FontAwesomeIcon
-            icon="fa-solid fa-phone"
-            className="text-2xl mr-2.5 text-[#feff00]"
-          />
-          <p className="inline-block text-gray-300">
-            (+234)7044252647, (+234)8038079547
-          </p>
-        </span>
-        <span className="block w-full text-center">
-          <FontAwesomeIcon
-            icon="fa-solid fa-envelope"
-            className="text-2xl mr-2.5 text-[#feff00]"
-          />
-          <p className="inline-block text-gray-300">info@spoc.com.ng</p>
-        </span>
+    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10">
+        Get in Touch with Us
+      </h2>
+      <div className="max-w-md mx-auto">
+        <div className="bg-gray-800 p-8 rounded-lg">
+          <div className="flex items-center mb-6">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-yellow-500 text-2xl mr-4"
+            />
+            <div>
+              <h3 className="text-white font-medium">Phone</h3>
+              <p className="text-gray-300">
+                (+234) 7044252647, (+234) 8038079547
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-yellow-500 text-2xl mr-4"
+            />
+            <div>
+              <h3 className="text-white font-medium">Email</h3>
+              <p className="text-gray-300">info@spoc.com.ng</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
 function Address() {
   return (
-    <div className="text-white">
-      <h1 className="text-center text-3xl font-aldrich uppercase mt-2.5">
+    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10">
         Our Address
-      </h1>
-      <div className="font-roboto">
-        <span className="block w-full text-center">
-          <FontAwesomeIcon
-            icon="fa-solid fa-location-dot"
-            className="text-2xl mr-2.5 mb-5 sm:mr-[5px] sm:mb-0 lg:mr-2.5 lg:mb-5 text-[#feff00]"
-          />
-          <p className="inline-block w-[80%] text-gray-300 sm:mb-2.5">
-            Road No 90, Delta Life Tower (4th Floor), Gulshan - 2, Dhaka - 1212
-          </p>
-        </span>
-        <span className="block w-full text-center">
-          <FontAwesomeIcon
-            icon="fa-solid fa-location-dot"
-            className="text-2xl mr-2.5 mb-5 sm:mr-[5px] sm:mb-[-5px] lg:mr-2.5 lg:mb-5 text-[#feff00]"
-          />
-          <p className="inline-block w-[80%] text-gray-300">
-            Akinwumi Mamabibeli Street, Oke-iya Road, Ijoka, Akure, Ondo State,
-            Nigeria
-          </p>
-        </span>
+      </h2>
+      <div className="max-w-md mx-auto">
+        <div className="bg-gray-800 p-8 rounded-lg">
+          <div className="flex items-start mb-6">
+            <div>
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon
+                  icon={faHome}
+                  className="text-yellow-500 text-2xl mr-4"
+                />
+                <p className="text-gray-300 ">
+                  Road No 90, Delta Life Tower (4th Floor), Gulshan - 2, Dhaka -
+                  1212
+                </p>
+              </div>
+              <div className="flex items-center">
+                <FontAwesomeIcon
+                  icon={faHome}
+                  className="text-yellow-500 text-2xl mr-4"
+                />
+                <p className="text-gray-300">
+                  Akinwumi Mamabibeli Street, Oke-iya Road, Ijoka, Akure, Ondo
+                  State, Nigeria
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
 function QuickLinks() {
   return (
-    <div className="text-white">
-      <h1 className="text-center text-3xl font-aldrich uppercase mt-2.5">
+    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10">
         Quick Links
-      </h1>
-      <ul className="w-[50%] relative left-[50%] translate-x-[-50%] text-white text-center font-roboto lg:mb-[5px]">
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            Homepage
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/membership"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            Membership
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/ppa-professionals"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            PPA professionals
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/cpid-professionals"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            CPID professionals
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/dsi-professionals"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            DSI professionals
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/members"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            Members
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/register"
-            className={({ isActive }) =>
-              `w-full h-8 pt-1 mt-2 font-aldrich hover:text-[#feff00] ${
-                isActive ? "text-[#feff00]" : "text-gray-300"
-              }`
-            }
-          >
-            Register
-          </NavLink>
-        </li>
-      </ul>
+      </h2>
+      <div className="max-w-md mx-auto">
+        <div className="bg-gray-800 p-8 rounded-lg">
+          <ul className="space-y-4 text-center">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                Homepage
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/membership"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                Membership
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/ppa-professionals"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                PPA professionals
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cpid-professionals"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                CPID professionals
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dsi-professionals"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                DSI professionals
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/members"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                Members
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  `font-medium hover:text-yellow-500 ${
+                    isActive ? "text-yellow-500" : "text-gray-300"
+                  }`
+                }
+              >
+                Register
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
+
 function Foot() {
   return (
-    <>
-      <hr className="w-[80%] h-[5px] bg-white ml-[10%] rounded-2xl" />
-      <span className="block text-gray-300 text-center w-full text-[10px]">
-        &copy; ASPOI 2020
-      </span>
-    </>
+    <div className="bg-gray-800 py-6 px-4 md:px-8 lg:px-12">
+      <div className="max-w-md mx-auto">
+        <hr className="w-full h-1 bg-gray-600 rounded-full mb-4" />
+        <p className="text-gray-400 text-sm text-center">&copy; ASPOI 2020</p>
+      </div>
+    </div>
   );
 }
 
