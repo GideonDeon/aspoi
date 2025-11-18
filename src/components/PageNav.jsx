@@ -48,7 +48,7 @@ function PageNavMobile() {
               to="/"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -61,7 +61,7 @@ function PageNavMobile() {
               to="/about"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -74,7 +74,7 @@ function PageNavMobile() {
               to="/membership"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -87,7 +87,7 @@ function PageNavMobile() {
               to="/ppa-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -100,7 +100,7 @@ function PageNavMobile() {
               to="/cpid-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -113,7 +113,7 @@ function PageNavMobile() {
               to="/dsi-professionals"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -126,7 +126,7 @@ function PageNavMobile() {
               to="/members"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }
@@ -139,7 +139,7 @@ function PageNavMobile() {
               to="/register"
               onClick={HandleLinkClick}
               className={({ isActive }) =>
-                `w-fit h-8 pt-1  block font-aldrich ${
+                `w-fit h-8 pt-1  block font-aldrich hover:text-[#feff00] ${
                   isActive ? "text-[#feff00]" : "text-white"
                 }`
               }

@@ -5,16 +5,12 @@ function CPIDprofessionals() {
   return (
     <>
       <PageNav />
-
       <main
         className="relative bg-cover bg-center min-h-[40vh] md:min-h-screen flex items-center justify-center"
         style={{ backgroundImage: "url('/images/MaintenanceP.png')" }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Text Content */}
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-3 text-center px-6">
           <h1 className="text-3xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
             This Page is Under Maintenance
           </h1>
@@ -27,7 +23,6 @@ function CPIDprofessionals() {
           </p>
         </div>
       </main>
-
       <Footer />
     </>
   );

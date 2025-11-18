@@ -12,9 +12,23 @@
   --font-roboto: Roboto, "sanserif";
 }
 
+
 ::selection {
   background-color: #ff3d00;
   color: #ffffff;
 }
 
 @import "tailwindcss";
+
+@layer utilities {
+      /* Hide scrollbar for Chrome, Safari, and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge, and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    }

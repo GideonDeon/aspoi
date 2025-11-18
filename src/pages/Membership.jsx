@@ -2,42 +2,53 @@ import PageNav from "../components/PageNav";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
 
-function Members() {
+function Membership() {
   return (
     <>
       <PageNav />
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+}
 
-      {/* Hero Section */}
-      <section
-        className="relative bg-cover bg-center min-h-[40vh] md:min-h-[70vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/Handshake.png')" }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-transparent"></div>
+function Header() {
+  return (
+    <section
+      className="relative bg-cover bg-center min-h-[40vh] md:min-h-[70vh] flex items-center justify-center"
+      style={{ backgroundImage: "url('/images/Handshake.png')" }}
+    >
+      <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-transparent"></div>
 
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-20">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide">
-            MEMBERSHIP
-          </h1>
+      <div className="relative z-3 text-center max-w-3xl mx-auto px-6 py-20">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide">
+          MEMBERSHIP
+        </h1>
 
-          <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Be part of something bigger — experience{" "}
-            <span className="text-white font-semibold">growth</span>,
-            <span className="text-white font-semibold"> connection</span>, and{" "}
-            <span className="text-white font-semibold">exclusive perks</span>.
-          </p>
+        <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+          Be part of something bigger — experience
+          <span className="text-white font-semibold">growth</span>,
+          <span className="text-white font-semibold"> connection</span>, and
+          <span className="text-white font-semibold">exclusive perks</span>.
+        </p>
 
-          <div className="mt-8">
-            <NavLink
-              to="/register"
-              className="inline-block bg-yellow-400 text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"
-            >
-              Join Now
-            </NavLink>
-          </div>
+        <div className="mt-8">
+          <NavLink
+            to="/register"
+            className="inline-block bg-[#feff00] text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"
+          >
+            Join Now
+          </NavLink>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
+function Body() {
+  return (
+    <>
       <div className="mt-12 max-w-3xl mx-auto border-l-4 border-yellow-500 pl-6 text-gray-800 text-lg leading-relaxed">
         <p className="italic">
           “Membership in the association is open to all citizens of the world —
@@ -46,8 +57,6 @@ function Members() {
           for protecting and safeguarding people.”
         </p>
       </div>
-
-      {/* Membership Categories */}
       <main className="bg-gray-50 py-20 px-6 md:px-16 font-roboto text-gray-800">
         <div className="max-w-5xl mx-auto text-center">
           <div className="max-w-4xl mx-auto px-6 text-center">
@@ -55,77 +64,52 @@ function Members() {
               MEMBERSHIP CATEGORIES
             </h2>
             <p className="text-gray-700 text-lg md:text-xl mb-12 leading-relaxed">
-              ASPOI membership is open to everyone committed to{" "}
+              ASPOI membership is open to everyone committed to
               <span className="font-semibold">safety</span> and
               <span className="font-semibold"> humanitarian service</span>.
-              Choose your category and become part of a global network promoting{" "}
-              <span className="font-semibold">peace</span> and{" "}
+              Choose your category and become part of a global network promoting
+              <span className="font-semibold">peace</span> and
               <span className="font-semibold">justice</span>.
             </p>
           </div>
-
-          {/* Membership Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* FIELD OPERATIONAL MEMBERSHIP */}
             <div className="max-w-md mx-auto bg-white rounded-3xl shadow-2xl hover:shadow-4xl hover:scale-105 transition-all duration-300 overflow-hidden border-l-8 border-black">
               <div className="p-6 space-y-6 relative">
-                {/* Premium Popular Badge */}
-                <span className="absolute -top-0.5 right-4 bg-linear-to-r from-yellow-400 to-yellow-500 text-black font-bold px-3 py-1.5 rounded-full text-sm shadow-md uppercase tracking-wide">
+                <span className="absolute -top-0.5 right-4 bg-linear-to-r from-yellow-400 to-[#feff00] text-black font-bold px-3 py-1.5 rounded-full text-sm shadow-md uppercase tracking-wide">
                   Popular
                 </span>
-
-                {/* Title */}
                 <h3 className="text-3xl font-extrabold text-gray-900">
                   FIELD OPERATIONAL MEMBERSHIP
                 </h3>
-
-                {/* Price */}
                 <p className="text-2xl font-bold text-gray-800">$</p>
-
-                {/* Contact Info */}
                 <p className="text-gray-700 font-medium">
                   Contact your National Director/Commander General
                 </p>
-
-                {/* Description */}
                 <p className="text-gray-600 leading-relaxed">
                   FIELD OPERATION MEMBERSHIP (SPOI AND SPON OFFICERS). This is
                   for active full-uniformed men and women who are members and
                   officers of Safety and Protection Officers International
                   operating in different countries.
                 </p>
-
-                {/* Register Button */}
                 <NavLink
                   to="/register"
-                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-yellow-500 transition font-semibold text-center"
+                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-[#feff00] hover:text-black transition font-semibold text-center"
                 >
                   REGISTER
                 </NavLink>
-
-                {/* Note */}
                 <p className="text-sm text-red-600 italic mt-2">
                   NOTE: Your payment receipt is required to verify your account
                   before confirmation!!!
                 </p>
               </div>
             </div>
-
-            {/* PHILANTHROPIC MEMBERSHIP */}
             <div className="max-w-md mx-auto bg-white rounded-3xl shadow-2xl hover:shadow-4xl hover:scale-105 transition-all duration-300 overflow-hidden border-l-8 border-black">
               <div className="p-6 space-y-6 relative">
-                {/* Premium Popular Badge */}
-
-                {/* Title */}
                 <h3 className="text-3xl font-extrabold text-gray-900">
                   PHILANTHROPIC MEMBERS
                 </h3>
-
-                {/* Price */}
                 <p className="text-2xl font-bold text-gray-800">$100</p>
                 <p className="text-gray-700 font-medium">Annually</p>
-
-                {/* Description */}
                 <p className="text-gray-600 leading-relaxed">
                   PHILANTROPIC MEMBERSHIP is for well-meaning and devoted
                   members of the public who have been sponsoring and supporting
@@ -133,41 +117,29 @@ function Members() {
                   properties, and fundamental rights of all humans in the world.
                   Philanthropic members may or may not wear ASPOI uniform.
                 </p>
-
-                {/* Register Button */}
                 <NavLink
                   to="/register"
-                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-yellow-500 transition font-semibold text-center"
+                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-[#feff00] hover:text-black transition font-semibold text-center"
                 >
                   REGISTER
                 </NavLink>
 
-                {/* Note */}
                 <p className="text-sm text-red-600 italic mt-2">
                   NOTE: your payment receipt is required to verify your payment
                   before your account is confirmed!!!
                 </p>
               </div>
             </div>
-
-            {/* PROFESSIONAL MEMBERSHIP */}
             <div className="max-w-md mx-auto bg-white rounded-3xl shadow-2xl hover:shadow-4xl hover:scale-105 transition-all duration-300 overflow-hidden border-l-8 border-black">
               <div className="p-6 space-y-6 relative">
-                {/* Premium Popular Badge */}
-                <span className="absolute -top-0.5 right-4 bg-linear-to-r from-yellow-400 to-yellow-500 text-black font-bold px-3 py-1.5 rounded-full text-sm shadow-md uppercase tracking-wide">
+                <span className="absolute -top-0.5 right-4 bg-linear-to-r from-yellow-400 to-[#feff00] text-black font-bold px-3 py-1.5 rounded-full text-sm shadow-md uppercase tracking-wide">
                   Popular
                 </span>
-
-                {/* Title */}
                 <h3 className="text-3xl font-extrabold text-gray-900">
                   PROFESSIONAL MEMBERSHIP INDIVIDUAL
                 </h3>
-
-                {/* Price */}
                 <p className="text-2xl font-bold text-gray-800">$50</p>
                 <p className="text-gray-700 font-medium">Annually</p>
-
-                {/* Description */}
                 <p className="text-gray-600 leading-relaxed">
                   PROFESSIONAL SERVICE PRACTITIONERS MEMBERSHIP is for the
                   serving or retired military, paramilitary, and private
@@ -178,40 +150,26 @@ function Members() {
                   fundamental rights of all humans in the world. Professional
                   members may or may not wear ASPOI uniform.
                 </p>
-
-                {/* Register Button */}
                 <NavLink
                   to="/register"
-                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-yellow-500 transition font-semibold text-center"
+                  className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-[#feff00] hover:text-black transition font-semibold text-center"
                 >
                   REGISTER
                 </NavLink>
-
-                {/* Note */}
                 <p className="text-sm text-red-600 italic mt-2">
                   NOTE: your payment receipt is required to verify your payment
                   before your account is confirmed!!!
                 </p>
               </div>
             </div>
-
-            {/* CORPORATE MEMBERSHIP */}
             <div className="max-w-md mx-auto bg-white rounded-3xl shadow-2xl hover:shadow-4xl hover:scale-105 transition-all duration-300 overflow-hidden border-l-8 border-black">
               <div className="p-6 relative flex flex-col h-full justify-between">
-                {/* Premium Popular Badge */}
-
-                {/* Main Content */}
                 <div className="space-y-4">
-                  {/* Title */}
                   <h3 className="text-3xl font-extrabold text-gray-900">
                     CORPORATE MEMBERSHIP
                   </h3>
-
-                  {/* Price */}
                   <p className="text-2xl font-bold text-gray-800">$150</p>
                   <p className="text-gray-700 font-medium">Annually</p>
-
-                  {/* Description */}
                   <p className="text-gray-600 leading-relaxed">
                     CORPORATE MEMBERSHIP is for security organizations or
                     companies who are willing to partner with ASPOI in providing
@@ -219,12 +177,10 @@ function Members() {
                     fundamental rights of all humans in the world.
                   </p>
                 </div>
-
-                {/* Bottom Section: Register Button + Note */}
                 <div className="mt-6 space-y-7">
                   <NavLink
                     to="/register"
-                    className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-yellow-500 transition font-semibold text-center"
+                    className="w-full inline-block bg-black text-white py-3 rounded-xl hover:bg-[#feff00] hover:text-black transition font-semibold text-center"
                   >
                     REGISTER
                   </NavLink>
@@ -237,8 +193,6 @@ function Members() {
               </div>
             </div>
           </div>
-
-          {/* Payment Info */}
           <div className="max-w-md mx-auto mt-16 bg-blue-50 border-l-4 border-yellow-300 rounded-lg p-6 flex flex-col items-center space-y-3 shadow-md">
             <svg
               className="w-10 h-10 text-blue-600"
@@ -260,10 +214,7 @@ function Members() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
-
-export default Members;
+export default Membership;

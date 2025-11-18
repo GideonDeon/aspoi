@@ -6,34 +6,48 @@ function About() {
   return (
     <>
       <PageNav />
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+}
 
-      <section
-        className="relative bg-cover bg-center min-h-[40vh] md:min-h-[70vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/AboutImage.png')" }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-transparent"></div>
+function Header() {
+  return (
+    <section
+      className="relative bg-cover bg-center min-h-[40vh] md:min-h-[70vh] flex items-center justify-center"
+      style={{ backgroundImage: "url('/images/AboutImage.png')" }}
+    >
+      <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-transparent"></div>
 
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-20">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide">
-            About <span className="text-yellow-400">ASPOI</span>
-          </h1>
+      <div className="relative z-3 text-center max-w-3xl mx-auto px-6 py-20">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide">
+          About <span className="text-yellow-400">ASPOI</span>
+        </h1>
 
-          <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            We are a non-political, non-armed organization devoted to advancing{" "}
-            <span className="text-white font-semibold">safety</span>,{" "}
-            <span className="text-white font-semibold">peace</span>, and{" "}
-            <span className="text-white font-semibold">protection</span> through
-            intelligence, collaboration, and non-violent solutions.
-          </p>
-        </div>
-      </section>
+        <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+          We are a non-political, non-armed organization devoted to advancing
+          <span className="text-white font-semibold">safety</span>,
+          <span className="text-white font-semibold">peace</span>, and
+          <span className="text-white font-semibold">protection</span> through
+          intelligence, collaboration, and non-violent solutions.
+        </p>
+      </div>
+    </section>
+  );
+}
 
+function Body() {
+  return (
+    <>
       <section className="bg-white text-gray-800 py-20 px-6 md:px-20">
         <div className="max-w-6xl mx-auto text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who We Are</h2>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            The{" "}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-aldrich">
+            Who We Are
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto font-roboto">
+            The
             <strong>
               Association of Safety and Protection Officers International
               (ASPOI)
@@ -75,7 +89,6 @@ function About() {
               </p>
             </div>
           </div>
-
           <div className="group bg-gray-50 rounded-2xl shadow-lg p-8 hover:shadow-2xl transition duration-300 border border-gray-100">
             <div className="flex flex-col items-center text-center">
               <div className="bg-yellow-100 p-4 rounded-full mb-4 group-hover:bg-yellow-300 transition">
@@ -83,10 +96,10 @@ function About() {
               </div>
               <h3 className="text-2xl font-semibold mb-3">Our Field Arm</h3>
               <p className="leading-relaxed text-[17px] text-gray-700">
-                The{" "}
+                The
                 <strong>
                   Safety and Protection Officers International (SPOI)
-                </strong>{" "}
+                </strong>
                 serves as our field unit — a uniformed, disciplined, yet unarmed
                 body committed to human rights defense and peace maintenance.
               </p>
@@ -94,14 +107,12 @@ function About() {
           </div>
         </div>
       </section>
-
-      {/* JOIN US SECTION */}
       <section className="bg-yellow-50 py-16 px-6 md:px-20 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-aldrich text-gray-800 mb-4">
             Join the Movement for Safety & Peace
           </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed font-roboto">
             Become part of a global community dedicated to protecting lives,
             promoting safety, and defending human rights through unity and
             non-violence. Your participation makes a difference.
@@ -109,16 +120,13 @@ function About() {
 
           <NavLink
             to="/register"
-            className="inline-block bg-yellow-400 text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"
+            className="inline-block bg-[#feff00] text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"
           >
             Join Now
           </NavLink>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
-
 export default About;
