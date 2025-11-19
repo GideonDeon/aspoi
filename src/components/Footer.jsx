@@ -28,8 +28,8 @@ function FooterMain() {
 
 function Contact() {
   return (
-    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
-      <h2 className="text-2xl font-bold text-center text-white mb-10">
+    <div className="bg-black py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10 font-aldrich">
         Get in Touch with Us
       </h2>
       <div className="max-w-md mx-auto">
@@ -37,7 +37,7 @@ function Contact() {
           <div className="flex items-center mb-6">
             <FontAwesomeIcon
               icon={faPhone}
-              className="text-yellow-500 text-2xl mr-4"
+              className="text-[#feff00] text-2xl mr-4"
             />
             <div>
               <h3 className="text-white font-medium">Phone</h3>
@@ -49,7 +49,7 @@ function Contact() {
           <div className="flex items-center">
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="text-yellow-500 text-2xl mr-4"
+              className="text-[#feff00] text-2xl mr-4"
             />
             <div>
               <h3 className="text-white font-medium">Email</h3>
@@ -64,8 +64,8 @@ function Contact() {
 
 function Address() {
   return (
-    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
-      <h2 className="text-2xl font-bold text-center text-white mb-10">
+    <div className="bg-black py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10 font-aldrich">
         Our Address
       </h2>
       <div className="max-w-md mx-auto">
@@ -75,7 +75,7 @@ function Address() {
               <div className="flex items-center mb-4">
                 <FontAwesomeIcon
                   icon={faHome}
-                  className="text-yellow-500 text-2xl mr-4"
+                  className="text-[#feff00] text-2xl mr-4"
                 />
                 <p className="text-gray-300 ">
                   Road No 90, Delta Life Tower (4th Floor), Gulshan - 2, Dhaka -
@@ -85,7 +85,7 @@ function Address() {
               <div className="flex items-center">
                 <FontAwesomeIcon
                   icon={faHome}
-                  className="text-yellow-500 text-2xl mr-4"
+                  className="text-[#feff00] text-2xl mr-4"
                 />
                 <p className="text-gray-300">
                   Akinwumi Mamabibeli Street, Oke-iya Road, Ijoka, Akure, Ondo
@@ -102,8 +102,8 @@ function Address() {
 
 function QuickLinks() {
   return (
-    <div className="bg-gray-900 py-12 px-6 md:px-10 lg:px-14">
-      <h2 className="text-2xl font-bold text-center text-white mb-10">
+    <div className="bg-black py-12 px-6 md:px-10 lg:px-14">
+      <h2 className="text-2xl font-bold text-center text-white mb-10 font-aldrich">
         Quick Links
       </h2>
       <div className="max-w-md mx-auto">
@@ -113,8 +113,8 @@ function QuickLinks() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -125,8 +125,8 @@ function QuickLinks() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -137,8 +137,8 @@ function QuickLinks() {
               <NavLink
                 to="/membership"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -149,8 +149,8 @@ function QuickLinks() {
               <NavLink
                 to="/ppa-professionals"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -161,8 +161,8 @@ function QuickLinks() {
               <NavLink
                 to="/cpid-professionals"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -173,8 +173,8 @@ function QuickLinks() {
               <NavLink
                 to="/dsi-professionals"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -185,8 +185,8 @@ function QuickLinks() {
               <NavLink
                 to="/members"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
@@ -197,8 +197,8 @@ function QuickLinks() {
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
-                  `font-medium hover:text-yellow-500 ${
-                    isActive ? "text-yellow-500" : "text-gray-300"
+                  `font-medium hover:text-[#feff00] ${
+                    isActive ? "text-[#feff00]" : "text-gray-300"
                   }`
                 }
               >
