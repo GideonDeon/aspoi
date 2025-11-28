@@ -60,15 +60,11 @@ function RegisterPage() {
 
   const onSubmit = async (data) => {
     try {
-      // Create FormData object
       const formData = new FormData();
       
-      // Append the image file
       if (imageFile) {
         formData.append("image", imageFile);
       }
-      
-      // Append other form fields
       formData.append("fullname", toTitleCase(data.fullname));
       formData.append("phone", data.phone);
       formData.append("email", data.email);
@@ -77,7 +73,6 @@ function RegisterPage() {
 
       const res = await fetch("http://localhost:3000/api/paystack/initialize", {
         method: "POST",
-        // Remove Content-Type header - browser will set it automatically with boundary
         body: formData,
       });
 
@@ -115,7 +110,6 @@ function RegisterPage() {
     
     setValue("fullname", titleCased, { shouldValidate: true });
     
-    // Restore cursor position after transformation
     setTimeout(() => {
       input.setSelectionRange(cursorPosition, cursorPosition);
     }, 0);
