@@ -1,6 +1,14 @@
 import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+
+const membershipOptions = {
+  fieldOperationalMembership: 5000,
+  philantropicMembership: 10000,
+  professionalMembershipIndividual: 20000,
+  corporateMembership: 50000,
+};
 
 function Register() {
   return (
@@ -13,115 +21,212 @@ function Register() {
 }
 
 function RegisterPage() {
-  const [form, setForm] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    eventType: "",
-    // add other fields you need
-  });
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm();
 
-  useEffect(() => {
-    // preload from sessionStorage if present (helps if user comes back)
-    const draft = sessionStorage.getItem("registrationDraft");
-    if (draft) setForm(JSON.parse(draft));
-  }, []);
+  const [preview, setPreview] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
 
-  useEffect(() => {
-    // save draft on change
-    sessionStorage.setItem("registrationDraft", JSON.stringify(form));
-  }, [form]);
+  const selectedMembership = watch("membership");
 
-  const validate = () => {
-    const e = {};
-    if (!form.fullName.trim()) e.fullName = "Full name required";
-    if (!form.email.match(/^\S+@\S+\.\S+$/)) e.email = "Invalid email";
-    if (!form.phone.trim()) e.phone = "Phone required";
-    return e;
+  const toTitleCase = (str) => {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   };
 
-  const handleSubmit = async (ev) => {
-    ev.preventDefault();
-    const e = validate();
-    setErrors(e);
-    if (Object.keys(e).length) return;
+  const camelToTitleCase = (str) => {
+    // Add space before capital letters and convert to title case
+    return str
+      .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+      .trim() // Remove leading space
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
 
-    setLoading(true);
+  React.useEffect(() => {
+    if (selectedMembership) {
+      setValue("amount", membershipOptions[selectedMembership]);
+    }
+  }, [selectedMembership, setValue]);
+
+  const onSubmit = async (data) => {
     try {
-      // send form data to backend to initialize payment
-      const res = await fetch("/api/initiate-payment", {
+      // Create FormData object
+      const formData = new FormData();
+      
+      // Append the image file
+      if (imageFile) {
+        formData.append("image", imageFile);
+      }
+      
+      // Append other form fields
+      formData.append("fullname", toTitleCase(data.fullname));
+      formData.append("phone", data.phone);
+      formData.append("email", data.email);
+      formData.append("membership", camelToTitleCase(data.membership));
+      formData.append("amount", data.amount);
+
+      const res = await fetch("http://localhost:3000/api/paystack/initialize", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        // Remove Content-Type header - browser will set it automatically with boundary
+        body: formData,
       });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Payment initiation failed");
+      const result = await res.json();
 
-      // data should include { paymentUrl, reference }
-      // redirect user to payment gateway
-      window.location.href = data.paymentUrl;
+      if (result.status && result.data.authorization_url) {
+        window.open(result.data.authorization_url, "_blank");
+      } else {
+        alert("Failed to initialize payment");
+      }
     } catch (err) {
       console.error(err);
-      alert(err.message || "Something went wrong — try again");
-      setLoading(false);
+      alert("Error initializing payment");
     }
   };
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 1024 * 1024) {
+        alert("Image size must not exceed 1MB");
+        e.target.value = null;
+        return;
+      }
+      setImageFile(file);
+      setPreview(URL.createObjectURL(file));
+    }
+  };
+
+  const handleFullNameChange = (e) => {
+    const input = e.target;
+    const cursorPosition = input.selectionStart;
+    const value = e.target.value;
+    const titleCased = toTitleCase(value);
+    
+    setValue("fullname", titleCased, { shouldValidate: true });
+    
+    // Restore cursor position after transformation
+    setTimeout(() => {
+      input.setSelectionRange(cursorPosition, cursorPosition);
+    }, 0);
+  };
+
   return (
-    <div className="register-page">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit} noValidate>
+    <>
+      <div>
+        <h1 className="uppercase font-extrabold font-aldrich text-[20px] text-center mt-10">Registration form</h1>
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="form-container rounded-2xl h-fit w-full pl-5 pr-5 mb-10 shadow-2xl sm:w-100 
+                  sm:relative sm:left-[50%] sm:-translate-x-[50%] lg:w-120 font-roboto "
+      >
+        <h3 className="font-bold mb-5 mt-2 text-[18px]">Member Details:</h3>
         <div>
-          <label>Full name</label>
+          <label className="font-bold font-roboto">Upload Image (max 1MB) <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <br />
           <input
-            value={form.fullName}
-            onChange={(e) => setForm({ ...form, fullName: e.target.value })}
+            type="file"
+            accept="image/*"
+            {...register("image", { required: true })}
+            onChange={handleImageUpload}
+            className="border-2 border-gray-400 mb-2 rounded-[5px] w-23 cursor-pointer pl-1"
           />
-          {errors.fullName && <small>{errors.fullName}</small>}
+          {errors.image && <p className="text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">This field is required!</p>}
+          {preview && <img src={preview} alt="preview" className="w-20 h-20" />}
         </div>
-
         <div>
-          <label>Email</label>
+          <label className="font-bold font-roboto">Full Name <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <br/>
           <input
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            type="text"
+            {...register("fullname", { required: "This field is required!" })}
+            onChange={handleFullNameChange}
+            placeholder="Full Name"
+            className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2"
+          />
+          <br />
+          <div className="flex w-full justify-evenly text-[14px]">
+            <span className="">Surname</span>
+            <span className="">Firstname</span>
+            <span className="">Othernames</span>
+          </div>
+          
+          {errors.fullname && (
+            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.fullname.message}</p>
+          )}
+        </div>
+        <div>
+          <label className="font-bold font-roboto">Phone Number  <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <br />
+          <input
+            type="tel"
+            placeholder="0000 000 0000"
+            className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2"
+            {...register("phone", {
+              required: "This field is required!",
+              pattern: {
+                value: /^[0-9]{10,15}$/,
+                message: "Enter a valid phone number",
+              },
+            })}
+          />
+          {errors.phone && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.phone.message}</p>}
+        </div>
+        <div>
+          <label className="font-bold font-roboto">Email <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <input
             type="email"
+            placeholder="ex: email@gmail.com"
+            className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2"
+            {...register("email", {
+              required: "This field is required!",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Enter a valid email",
+              },
+            })}
           />
-          {errors.email && <small>{errors.email}</small>}
+          {errors.email && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.email.message}</p>}
         </div>
-
         <div>
-          <label>Phone</label>
-          <input
-            value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          />
-          {errors.phone && <small>{errors.phone}</small>}
-        </div>
-
-        <div>
-          <label>Membership type</label>
-          <select
-            value={form.eventType}
-            onChange={(e) => setForm({ ...form, eventType: e.target.value })}
-            className="w-fit"
-          >
-            <option value="">Choose</option>
-            <option value="Field Operational Membership">Field Operational Membership</option>
-            <option value="Philantropic Membership">Philantropic Membership</option>
-            <option value="Professional Membership (Individual)">Professional Membership (Individual)</option>
-            <option value="Corporate Membership">Corporate Membership</option>
+          <label className="font-bold font-roboto">Membership <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <br />
+          <select {...register("membership", { required: true })} className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2">
+            <option value="">Select membership</option>
+            <option value="fieldOperationalMembership">Field Operational Membership</option>
+            <option value="philantropicMembership">Philantropic Membership</option>
+            <option value="professionalMembershipIndividual">Professional Membership Individual</option>
+            <option value="corporateMembership">Corporate Membership</option>
           </select>
+          {errors.membership && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">This field is required!</p>}
+        </div>
+        <div className="mt-2">
+          <label className="font-bold font-roboto">Amount <span>&#8358;</span></label>
+          <input
+            type="number"
+            className=" rounded-[5px] w-20 h-7 p-1"
+            {...register("amount")}
+            readOnly
+            value={
+              selectedMembership ? membershipOptions[selectedMembership] : ""
+            }
+          />
         </div>
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Redirecting to payment..." : "Register & Pay"}
-        </button>
+        <button type="submit" className=" bg-black text-white hover:bg-[#feff00] hover:text-black uppercase cursor-pointer rounded-[10px] w-full h-10 mb-3 mt-2 transition-all delay-100">Register</button>
       </form>
-    </div>
+    </>
   );
 }
 
