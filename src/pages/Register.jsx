@@ -37,19 +37,19 @@ function RegisterPage() {
   const toTitleCase = (str) => {
     return str
       .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   const camelToTitleCase = (str) => {
     // Add space before capital letters and convert to title case
     return str
-      .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+      .replace(/([A-Z])/g, " $1") // Add space before capital letters
       .trim() // Remove leading space
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(' ');
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
   };
 
   React.useEffect(() => {
@@ -61,7 +61,7 @@ function RegisterPage() {
   const onSubmit = async (data) => {
     try {
       const formData = new FormData();
-      
+
       if (imageFile) {
         formData.append("image", imageFile);
       }
@@ -107,9 +107,9 @@ function RegisterPage() {
     const cursorPosition = input.selectionStart;
     const value = e.target.value;
     const titleCased = toTitleCase(value);
-    
+
     setValue("fullname", titleCased, { shouldValidate: true });
-    
+
     setTimeout(() => {
       input.setSelectionRange(cursorPosition, cursorPosition);
     }, 0);
@@ -118,7 +118,9 @@ function RegisterPage() {
   return (
     <>
       <div>
-        <h1 className="uppercase font-extrabold font-aldrich text-[20px] text-center mt-10">Registration form</h1>
+        <h1 className="uppercase font-extrabold font-aldrich text-[20px] text-center mt-10">
+          Registration form
+        </h1>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -127,7 +129,12 @@ function RegisterPage() {
       >
         <h3 className="font-bold mb-5 mt-2 text-[18px]">Member Details:</h3>
         <div>
-          <label className="font-bold font-roboto">Upload Image (max 1MB) <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <label className="font-bold font-roboto">
+            Upload Image (max 1MB){" "}
+            <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
+              *
+            </span>
+          </label>
           <br />
           <input
             type="file"
@@ -136,12 +143,21 @@ function RegisterPage() {
             onChange={handleImageUpload}
             className="border-2 border-gray-400 mb-2 rounded-[5px] w-23 cursor-pointer pl-1"
           />
-          {errors.image && <p className="text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">This field is required!</p>}
+          {errors.image && (
+            <p className="text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">
+              This field is required!
+            </p>
+          )}
           {preview && <img src={preview} alt="preview" className="w-20 h-20" />}
         </div>
         <div>
-          <label className="font-bold font-roboto">Full Name <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
-          <br/>
+          <label className="font-bold font-roboto">
+            Full Name{" "}
+            <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
+              *
+            </span>
+          </label>
+          <br />
           <input
             type="text"
             {...register("fullname", { required: "This field is required!" })}
@@ -155,13 +171,20 @@ function RegisterPage() {
             <span className="">Firstname</span>
             <span className="">Othernames</span>
           </div>
-          
+
           {errors.fullname && (
-            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.fullname.message}</p>
+            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">
+              {errors.fullname.message}
+            </p>
           )}
         </div>
         <div>
-          <label className="font-bold font-roboto">Phone Number  <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <label className="font-bold font-roboto">
+            Phone Number{" "}
+            <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
+              *
+            </span>
+          </label>
           <br />
           <input
             type="tel"
@@ -175,10 +198,19 @@ function RegisterPage() {
               },
             })}
           />
-          {errors.phone && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.phone.message}</p>}
+          {errors.phone && (
+            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">
+              {errors.phone.message}
+            </p>
+          )}
         </div>
         <div>
-          <label className="font-bold font-roboto">Email <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <label className="font-bold font-roboto">
+            Email{" "}
+            <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
+              *
+            </span>
+          </label>
           <input
             type="email"
             placeholder="ex: email@gmail.com"
@@ -191,22 +223,46 @@ function RegisterPage() {
               },
             })}
           />
-          {errors.email && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div>
-          <label className="font-bold font-roboto">Membership <span className="text-red-500 text-[10px] -translate-y-1 inline-block">*</span></label>
+          <label className="font-bold font-roboto">
+            Membership{" "}
+            <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
+              *
+            </span>
+          </label>
           <br />
-          <select {...register("membership", { required: true })} className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2">
+          <select
+            {...register("membership", { required: true })}
+            className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2"
+          >
             <option value="">Select membership</option>
-            <option value="fieldOperationalMembership">Field Operational Membership</option>
-            <option value="philantropicMembership">Philantropic Membership</option>
-            <option value="professionalMembershipIndividual">Professional Membership Individual</option>
+            <option value="fieldOperationalMembership">
+              Field Operational Membership
+            </option>
+            <option value="philantropicMembership">
+              Philantropic Membership
+            </option>
+            <option value="professionalMembershipIndividual">
+              Professional Membership Individual
+            </option>
             <option value="corporateMembership">Corporate Membership</option>
           </select>
-          {errors.membership && <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">This field is required!</p>}
+          {errors.membership && (
+            <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">
+              This field is required!
+            </p>
+          )}
         </div>
         <div className="mt-2">
-          <label className="font-bold font-roboto">Amount <span>&#8358;</span></label>
+          <label className="font-bold font-roboto">
+            Amount <span>&#8358;</span>
+          </label>
           <input
             type="number"
             className=" rounded-[5px] w-20 h-7 p-1"
@@ -218,7 +274,12 @@ function RegisterPage() {
           />
         </div>
 
-        <button type="submit" className=" bg-black text-white hover:bg-[#feff00] hover:text-black uppercase cursor-pointer rounded-[10px] w-full h-10 mb-3 mt-2 transition-all delay-100">Register</button>
+        <button
+          type="submit"
+          className=" bg-black text-white hover:bg-[#feff00] hover:text-black uppercase cursor-pointer rounded-[10px] w-full h-10 mb-3 mt-2 transition-all delay-100"
+        >
+          Register
+        </button>
       </form>
     </>
   );
