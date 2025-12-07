@@ -99,7 +99,7 @@ function Members() {
                   className="bg-white/40 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-lg hover:scale-[1.02] transition-all text-center"
                 >
                   <img
-                    src={`https://aspoi-backend.vercel.app${member.imageUrl}`}
+                    src={member.imageUrl}
                     alt={member.fullname}
                     className="w-28 h-28 rounded-2xl object-cover mx-auto shadow-md"
                   />
