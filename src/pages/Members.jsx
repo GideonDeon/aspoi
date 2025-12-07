@@ -2,6 +2,19 @@ import { useEffect, useState } from "react";
 import PageNav from "../components/PageNav";
 import Footer from "../components/Footer";
 
+// Helper function to handle both old and new image URLs
+function getImageUrl(imageUrl) {
+  if (!imageUrl) return '/images/placeholder.jpg'; // fallback for missing images
+  
+  // If it's already a full URL (new Supabase URLs), return as is
+  if (imageUrl.startsWith('http')) {
+    return imageUrl;
+  }
+  
+  // If it's a relative path (old uploads), prepend backend domain
+  return `https://aspoi-backend.vercel.app${imageUrl}`;
+}
+
 function Members() {
   const [members, setMembers] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -99,9 +112,12 @@ function Members() {
                   className="bg-white/40 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-lg hover:scale-[1.02] transition-all text-center"
                 >
                   <img
-                    src={member.imageUrl}
+                    src={getImageUrl(member.imageUrl)}
                     alt={member.fullname}
                     className="w-28 h-28 rounded-2xl object-cover mx-auto shadow-md"
+                    onError={(e) => {
+                      e.target.src = '/images/placeholder.jpg'; // Fallback if image fails to load
+                    }}
                   />
 
                   <h3 className="text-xl font-bold text-gray-900 mt-4">
