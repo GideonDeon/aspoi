@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const membershipOptions = {
-  fieldOperationalMembership: 5000,
-  philantropicMembership: 10000,
-  professionalMembershipIndividual: 20000,
-  corporateMembership: 50000,
+  fieldOperationalMembership: 1000,
+  philantropicMembership: 225000,
+  professionalMembershipIndividual: 180000,
+  corporateMembership: 750000,
 };
 
 function Register() {
@@ -71,7 +71,7 @@ function RegisterPage() {
       formData.append("membership", camelToTitleCase(data.membership));
       formData.append("amount", data.amount);
 
-      const res = await fetch("http://localhost:3000/api/paystack/initialize", {
+      const res = await fetch("https://aspoi-backend.vercel.app/api/paystack/initialize", {
         method: "POST",
         body: formData,
       });
