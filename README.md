@@ -49,7 +49,7 @@ A React-based members directory for **ASPOI**, showcasing registered members wit
 - **Tailwind CSS** – Utility-first CSS framework
 - **React Router** – For routing between pages
 - **Fetch API** – To fetch member data from the backend
-- **Vercel Backend** – Data source for members API
+- **Next Backend** – Data source for members API
 
 ---
 
@@ -69,11 +69,11 @@ npm install
 
 Start the development server:
 
-npm start
+npm run dev
 
 Open the app in your browser:
 
-http://localhost:3000
+https://www.aspoi.com/
 
 Usage
 
