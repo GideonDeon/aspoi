@@ -1,4 +1,4 @@
-import Footer from "../components/Footer";
+import Foot from "../components/Copyright";
 import PageNav from "../components/PageNav";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +15,7 @@ function Register() {
     <>
       <PageNav />
       <RegisterPage />
-      <Footer />
+      <Foot />
     </>
   );
 }
@@ -71,10 +71,13 @@ function RegisterPage() {
       formData.append("membership", camelToTitleCase(data.membership));
       formData.append("amount", data.amount);
 
-      const res = await fetch("https://aspoi-backend.vercel.app/api/paystack/initialize", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://aspoi-backend.vercel.app/api/paystack/initialize",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await res.json();
 
@@ -169,7 +172,7 @@ function RegisterPage() {
           <div className="flex w-full justify-evenly text-[14px]">
             <span className="">Surname</span>
             <span className="">Firstname</span>
-            <span className="">Othernames</span>
+            <span className="">Other names</span>
           </div>
 
           {errors.fullname && (

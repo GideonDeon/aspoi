@@ -1,7 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope, faHome } from "@fortawesome/free-solid-svg-icons";
+
+const quickLinks = [
+  { to: "/", label: "Homepage" },
+  { to: "/about", label: "About" },
+  { to: "/membership", label: "Membership" },
+  { to: "/ppa-professionals", label: "PPA professionals" },
+  { to: "/cpid-professionals", label: "CPID professionals" },
+  { to: "/dsi-professionals", label: "DSI professionals" },
+  { to: "/members", label: "Members" },
+  { to: "/register", label: "Register" },
+];
 
 function Footer() {
   return (
@@ -77,7 +87,7 @@ function Address() {
                   icon={faHome}
                   className="text-[#feff00] text-2xl mr-4"
                 />
-                <p className="text-gray-300 ">
+                <p className="text-gray-300">
                   Road No 90, Delta Life Tower (4th Floor), Gulshan - 2, Dhaka -
                   1212
                 </p>
@@ -109,102 +119,20 @@ function QuickLinks() {
       <div className="max-w-md mx-auto">
         <div className="bg-gray-800 p-8 rounded-lg">
           <ul className="space-y-4 text-center">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                Homepage
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/membership"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                Membership
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/ppa-professionals"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                PPA professionals
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/cpid-professionals"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                CPID professionals
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dsi-professionals"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                DSI professionals
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/members"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                Members
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/register"
-                className={({ isActive }) =>
-                  `font-medium hover:text-[#feff00] ${
-                    isActive ? "text-[#feff00]" : "text-gray-300"
-                  }`
-                }
-              >
-                Register
-              </NavLink>
-            </li>
+            {quickLinks.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    `font-medium hover:text-[#feff00] ${
+                      isActive ? "text-[#feff00]" : "text-gray-300"
+                    }`
+                  }
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -217,7 +145,9 @@ function Foot() {
     <div className="bg-gray-800 py-6 px-4 md:px-8 lg:px-12">
       <div className="max-w-md mx-auto">
         <hr className="w-full h-1 bg-gray-600 rounded-full mb-4" />
-        <p className="text-gray-400 text-sm text-center">&copy; ASPOI {new Date().getFullYear()}</p>
+        <p className="text-gray-400 text-sm text-center">
+          &copy; ASPOI {new Date().getFullYear()}
+        </p>
       </div>
     </div>
   );

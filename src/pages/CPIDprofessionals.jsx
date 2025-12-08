@@ -1,10 +1,11 @@
-import Footer from "../components/Footer";
+import Foot from "../components/Copyright";
 import PageNav from "../components/PageNav";
 
 function CPIDprofessionals() {
   return (
     <>
       <PageNav />
+
       <main
         className="relative bg-cover bg-center min-h-[40vh] md:min-h-screen flex items-center justify-center"
         style={{ backgroundImage: "url('/images/MaintenanceP.png')" }}
@@ -23,7 +24,8 @@ function CPIDprofessionals() {
           </p>
         </div>
       </main>
-      <Footer />
+
+      <Foot />
     </>
   );
 }

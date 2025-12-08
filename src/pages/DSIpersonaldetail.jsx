@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
 import { dsiOfficers } from "../data/dsiOfficers";
 import PageNav from "../components/PageNav";
-import Footer from "../components/Footer";
+import Foot from "../components/Copyright";
 
 function DSIpersonaldetail() {
   return (
     <div>
       <PageNav />
       <Details />
-      <Footer />
+      <Foot />
     </div>
   );
 }
 
 function Details() {
-  const { id } = useParams(); // get dynamic URL segment
+  const { id } = useParams();
 
   const officer = dsiOfficers.find((o) => o.id.toString() === id);
 

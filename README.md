@@ -1,16 +1,123 @@
-# React + Vite
+# ASPOI Members Directory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based members directory for **ASPOI**, showcasing registered members with search and pagination features. The project uses **Tailwind CSS** for styling and supports dynamic membership badges, responsive layouts, and image handling with fallbacks.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## React Compiler
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [License](#license)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> A live demo can be accessed here (aspoi.vercel.app/):
+
+---
+
+## Features
+
+- Fetches member data from a remote API.
+- Responsive grid layout for members (mobile, tablet, desktop).
+- Membership badges with custom colors for each membership type:
+  - FIELD OPERATIONAL MEMBERSHIP → Yellow
+  - PHILANTHROPIC MEMBERS → Purple
+  - PROFESSIONAL MEMBERSHIP INDIVIDUAL → Green
+  - CORPORATE MEMBERSHIP → Gray
+- Search functionality by:
+  - Name
+  - Email
+  - Membership type
+- Pagination with customizable items per page.
+- Graceful fallback for missing images.
+- Modern UI with Tailwind CSS:
+  - Blur and shadow effects for cards
+  - Smooth hover transitions
+
+---
+
+## Technologies Used
+
+- **React** – Frontend library for building UI
+- **Tailwind CSS** – Utility-first CSS framework
+- **React Router** – For routing between pages
+- **Fetch API** – To fetch member data from the backend
+- **Vercel Backend** – Data source for members API
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/aspoi-members.git
+cd aspoi-members
+
+```
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm start
+
+Open the app in your browser:
+
+http://localhost:3000
+
+Usage
+
+Use the search bar to filter members by name, email, or membership type.
+
+Navigate pages using the Previous/Next buttons.
+
+Membership badges are color-coded to quickly identify membership categories.
+
+Images have a fallback to a placeholder if missing.
+
+## Folder Structure
+
+aspoi-members/
+│
+├─ src/
+│ ├─ components/
+│ │ ├─ PageNav.jsx
+│ │ └─ Footer.jsx
+│ ├─ pages/
+│ │ └─ Members.jsx
+│ ├─ assets/
+│ │ └─ images/
+│ └─ App.jsx
+│
+├─ public/
+│ └─ images/placeholder.jpg
+│
+├─ package.json
+└─ README.md
+
+## Notes
+
+The members API uses endpoint in development:
+
+The project ensures robust image handling with a fallback for any missing images.
+
+Tailwind utility classes allow premium-looking cards with blur, shadows, and hover effects.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Gideon Oluwanifemi & Opeyemi Michael Kolurejo
+Frontend Developer | Vuejs, Nextjs, React & Tailwind CSS Enthusiast

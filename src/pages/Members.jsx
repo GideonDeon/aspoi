@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 import PageNav from "../components/PageNav";
-import Footer from "../components/Footer";
+import Foot from "../components/Copyright";
 
-// Helper function to handle both old and new image URLs
+const membershipColors = {
+  "FIELD OPERATIONAL MEMBERSHIP": "bg-gray-300 text-gray-800",
+  "PHILANTROPIC MEMBERSHIP": "bg-purple-300 text-indigo-800",
+  "PROFESSIONAL MEMBERSHIP INDIVIDUAL": "bg-green-300 text-green-800",
+  "CORPORATE MEMBERSHIP": "bg-yellow-300 text-yellow-800",
+};
+
+function getMembershipColor(membership) {
+  if (!membership) return "bg-blue-100 text-blue-800";
+
+  const normalized = membership.trim().toUpperCase();
+
+  return membershipColors[normalized] || "bg-blue-100 text-blue-800";
+}
+
 function getImageUrl(imageUrl) {
-  if (!imageUrl) return '/images/placeholder.jpg'; // fallback for missing images
-  
-  // If it's already a full URL (new Supabase URLs), return as is
-  if (imageUrl.startsWith('http')) {
+  if (!imageUrl) return "/images/placeholder.jpg";
+
+  if (imageUrl.startsWith("http")) {
     return imageUrl;
   }
-  
-  // If it's a relative path (old uploads), prepend backend domain
+
   return `https://aspoi-backend.vercel.app${imageUrl}`;
 }
 
@@ -45,7 +57,6 @@ function Members() {
     fetchMembers();
   }, []);
 
-  // Search Filter
   useEffect(() => {
     if (!search.trim()) {
       setFiltered(members);
@@ -62,7 +73,6 @@ function Members() {
     setCurrentPage(1);
   }, [search, members]);
 
-  // Pagination
   const indexOfLast = currentPage * itemsPerPage;
   const indexOfFirst = indexOfLast - itemsPerPage;
   const currentMembers = filtered.slice(indexOfFirst, indexOfLast);
@@ -116,7 +126,7 @@ function Members() {
                     alt={member.fullname}
                     className="w-28 h-28 rounded-2xl object-cover mx-auto shadow-md"
                     onError={(e) => {
-                      e.target.src = '/images/placeholder.jpg'; // Fallback if image fails to load
+                      e.target.src = "/images/placeholder.jpg";
                     }}
                   />
 
@@ -124,14 +134,17 @@ function Members() {
                     {member.fullname}
                   </h3>
 
-                  <span className="inline-block mt-3 bg-blue-600/10 text-blue-700 text-sm px-4 py-1 rounded-full font-semibold">
+                  <span
+                    className={`inline-block mt-3 px-4 py-1 rounded-full font-semibold ${getMembershipColor(
+                      member.membership
+                    )}`}
+                  >
                     {member.membership}
                   </span>
                 </li>
               ))}
             </ul>
 
-            {/* Pagination */}
             <div className="flex justify-center items-center mt-8 gap-3">
               <button
                 disabled={currentPage === 1}
@@ -157,7 +170,7 @@ function Members() {
         )}
       </main>
 
-      <Footer />
+      <Foot />
     </>
   );
 }

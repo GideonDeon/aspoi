@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
+import Foot from "../components/Copyright";
 import PageNav from "../components/PageNav";
 
 function PPAprofessionals() {
@@ -91,7 +91,7 @@ function PPAprofessionals() {
           </p>
         </div>
       </main>
-      <Footer />
+      <Foot />
     </>
   );
 }
