@@ -8,7 +8,7 @@ const membershipCards = [
     price: "₦ 37,500",
     period: "Registration fee",
     desc: "FIELD OPERATION MEMBERSHIP (SPOI AND SPON OFFICERS). This is for active full-uniformed men and women who are members and officers of Safety and Protection Officers International operating in different countries.",
-    note: "Your payment receipt is required to verify your account before confirmation!!!",
+    note: "Your payment receipt is required to verify your payment",
     popular: true,
     bgColor: "bg-linear-to-r from-gray-700 via-gray-600 to-gray-500",
     borderColor: "border-gray-900",
