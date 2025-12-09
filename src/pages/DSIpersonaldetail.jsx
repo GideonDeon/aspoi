@@ -21,7 +21,7 @@ function Details() {
   if (!officer) return <h1 className="text-center mt-20">Officer Not Found</h1>;
 
   return (
-    <main className="relative border-2 m-3 p-2 rounded-2xl shadow w-fit sm:w-88 sm:left-[50%] sm:-translate-x-[50%]">
+    <main className="relative border-2 mt-40 mb-40 ml-3 mr-3 p-2 rounded-2xl shadow w-fit sm:w-88 sm:left-[50%] sm:-translate-x-[50%] sm:mb-85 lg:mb-40 lg:mt-5">
       <img
         src={officer.image}
         alt={officer.name}

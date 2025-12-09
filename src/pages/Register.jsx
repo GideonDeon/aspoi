@@ -126,7 +126,7 @@ function RegisterPage() {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="form-container rounded-2xl h-fit w-full pl-5 pr-5 mb-10 shadow-2xl sm:w-100 
+        className="form-container rounded-2xl h-fit w-full pl-5 pr-5 mb-15 shadow-2xl sm:w-100 
                   sm:relative sm:left-[50%] sm:-translate-x-[50%] lg:w-120 font-roboto "
       >
         <h3 className="font-bold mb-5 mt-2 text-[18px]">Member Details:</h3>
