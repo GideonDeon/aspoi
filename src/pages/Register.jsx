@@ -269,6 +269,7 @@ function RegisterPage() {
               selectedMembership ? membershipOptions[selectedMembership] : ""
             }
           />
+          <p className="text-center text-[12px] italic">10% of the registration fee will be paid annually</p>
         </div>
 
         <button

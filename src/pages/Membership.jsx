@@ -6,7 +6,7 @@ const membershipCards = [
   {
     title: "FIELD OPERATIONAL MEMBERSHIP",
     price: "₦ 37,500",
-    period: "Annually",
+    period: "Registration fee",
     desc: "FIELD OPERATION MEMBERSHIP (SPOI AND SPON OFFICERS). This is for active full-uniformed men and women who are members and officers of Safety and Protection Officers International operating in different countries.",
     note: "Your payment receipt is required to verify your account before confirmation!!!",
     popular: true,
@@ -21,7 +21,7 @@ const membershipCards = [
   {
     title: "PHILANTHROPIC MEMBERS",
     price: "₦ 225,000",
-    period: "Annually",
+    period: "Registration fee",
     desc: "PHILANTHROPIC MEMBERSHIP is for well-meaning and devoted members of the public who sponsor safety and protection initiatives. Philanthropic members may or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",
     popular: false,
@@ -36,7 +36,7 @@ const membershipCards = [
   {
     title: "PROFESSIONAL MEMBERSHIP INDIVIDUAL",
     price: "₦ 180,000",
-    period: "Annually",
+    period: "Registration fee",
     desc: "PROFESSIONAL SERVICE PRACTITIONERS MEMBERSHIP is for serving or retired military, paramilitary, and private security personnel ready to support justice and safety initiatives. May or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",
     popular: true,
@@ -51,7 +51,7 @@ const membershipCards = [
   {
     title: "CORPORATE MEMBERSHIP",
     price: "₦ 750,000",
-    period: "Annually",
+    period: "Registration fee",
     desc: "CORPORATE MEMBERSHIP is for organizations partnering with ASPOI to ensure safety, protection, and justice globally.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",
     popular: false,
@@ -141,14 +141,15 @@ function Body() {
                   <h3 className={`text-3xl font-extrabold ${card.textColor}`}>
                     {card.title}
                   </h3>
-                  <p className={`text-2xl font-bold ${card.textColor}`}>
-                    {card.price}
-                  </p>
                   {card.period && (
                     <p className={`${card.textColor} font-medium`}>
                       {card.period}
                     </p>
                   )}
+                  <p className={`text-2xl font-bold ${card.textColor}`}>
+                    {card.price}
+                  </p>
+                  
                   <p className={`${card.textColor} leading-relaxed`}>
                     {card.desc}
                   </p>

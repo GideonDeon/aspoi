@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function BodyTwo() {
   return (
     <div className="lg:grid grid-cols-[1fr_1fr] w-full h-fit">
-      <div className="bg-black pb-28 md:pl-15 md:pr-15 sm:pt-10 lg:pt-30 ">
+      <div className="bg-black pt-10 pb-10 md:pl-15 md:pr-15 sm:pt-10 lg:pt-30 ">
         <h1 className="text-center text-4xl text-white font-bold font-aldrich pt-3">
           <span className="bg-[#ff3d00]/70 inline-block p-1.5">Our</span> Core
           Values
@@ -57,7 +57,7 @@ function BodyTwo() {
             </span>
             <span className="inline-block w-[60%] text-justify text-[10px] text-black xl:text-[12px]">
               We prioritize the welfare and safety of others above personal
-              gain, serving with dedication and compassion.
+              gain, serving with dedication.
             </span>
           </div>
         </div>
