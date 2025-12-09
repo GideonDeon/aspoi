@@ -66,7 +66,7 @@ function Search() {
 
   return (
     <div>
-      <label className="flex items-center ml-3 border-2 rounded-2xl w-fit h-10 px-3 mb-4 bg-white text-black">
+      <label className="flex items-center ml-3 border-2 rounded-lg w-fit h-10 px-3 mb-4 bg-white text-black">
         <input
           type="text"
           placeholder="Search by name..."
@@ -80,7 +80,7 @@ function Search() {
         />
       </label>
 
-      <div className="h-120 overflow-y-scroll no-scrollbar mb-7 sm:h-120 md:grid grid-cols-2">
+      <div className="h-120 overflow-y-scroll no-scrollbar mb-7 sm:h-120 md:grid grid-cols-2 border-b-4 border-black rounded-lg">
         {filtered.map((Officers) => (
           <div
             key={Officers.id}

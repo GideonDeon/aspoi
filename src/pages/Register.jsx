@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const membershipOptions = {
-  fieldOperationalMembership: 1000,
+  fieldOperationalMembership: 37500,
   philantropicMembership: 225000,
   professionalMembershipIndividual: 180000,
   corporateMembership: 750000,
@@ -43,10 +43,9 @@ function RegisterPage() {
   };
 
   const camelToTitleCase = (str) => {
-    // Add space before capital letters and convert to title case
     return str
-      .replace(/([A-Z])/g, " $1") // Add space before capital letters
-      .trim() // Remove leading space
+      .replace(/([A-Z])/g, " $1") 
+      .trim() 
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(" ");
@@ -133,7 +132,7 @@ function RegisterPage() {
         <h3 className="font-bold mb-5 mt-2 text-[18px]">Member Details:</h3>
         <div>
           <label className="font-bold font-roboto">
-            Upload Image (max 1MB){" "}
+            Upload Image/Logo (max 1MB)
             <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
               *
             </span>
@@ -155,7 +154,7 @@ function RegisterPage() {
         </div>
         <div>
           <label className="font-bold font-roboto">
-            Full Name{" "}
+            Full Name/ Organization Name
             <span className="text-red-500 text-[10px] -translate-y-1 inline-block">
               *
             </span>
@@ -165,15 +164,10 @@ function RegisterPage() {
             type="text"
             {...register("fullname", { required: "This field is required!" })}
             onChange={handleFullNameChange}
-            placeholder="Full Name"
+            placeholder="Full Name/ Organization Name"
             className="border-2 border-gray-400 mb-2 rounded-[5px] w-full h-10 p-2"
           />
           <br />
-          <div className="flex w-full justify-evenly text-[14px]">
-            <span className="">Surname</span>
-            <span className="">Firstname</span>
-            <span className="">Other names</span>
-          </div>
 
           {errors.fullname && (
             <p className="error text-white text-[10px] bg-red-500 rounded-[5px] w-fit p-1">

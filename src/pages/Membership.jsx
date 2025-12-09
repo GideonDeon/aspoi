@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const membershipCards = [
   {
     title: "FIELD OPERATIONAL MEMBERSHIP",
-    price: "#37,500",
+    price: "₦ 37,500",
     period: "Annually",
     desc: "FIELD OPERATION MEMBERSHIP (SPOI AND SPON OFFICERS). This is for active full-uniformed men and women who are members and officers of Safety and Protection Officers International operating in different countries.",
     note: "Your payment receipt is required to verify your account before confirmation!!!",
@@ -20,7 +20,7 @@ const membershipCards = [
   },
   {
     title: "PHILANTHROPIC MEMBERS",
-    price: "#225,000",
+    price: "₦ 225,000",
     period: "Annually",
     desc: "PHILANTHROPIC MEMBERSHIP is for well-meaning and devoted members of the public who sponsor safety and protection initiatives. Philanthropic members may or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",
@@ -35,7 +35,7 @@ const membershipCards = [
   },
   {
     title: "PROFESSIONAL MEMBERSHIP INDIVIDUAL",
-    price: "#180,000",
+    price: "₦ 180,000",
     period: "Annually",
     desc: "PROFESSIONAL SERVICE PRACTITIONERS MEMBERSHIP is for serving or retired military, paramilitary, and private security personnel ready to support justice and safety initiatives. May or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",
@@ -50,7 +50,7 @@ const membershipCards = [
   },
   {
     title: "CORPORATE MEMBERSHIP",
-    price: "#700,000",
+    price: "₦ 750,000",
     period: "Annually",
     desc: "CORPORATE MEMBERSHIP is for organizations partnering with ASPOI to ensure safety, protection, and justice globally.",
     note: "Your payment receipt is required to verify your payment before your account is confirmed!!!",

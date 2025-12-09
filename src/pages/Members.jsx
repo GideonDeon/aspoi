@@ -88,8 +88,8 @@ function Members() {
       >
         <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-transparent"></div>
         <div className="relative z-3 text-center max-w-3xl mx-auto px-6 py-20">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide">
-            Registered Members
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-wide uppercase">
+            Registered <span className="text-yellow-400">Members</span> 
           </h1>
         </div>
       </section>
@@ -135,7 +135,7 @@ function Members() {
                   </h3>
 
                   <span
-                    className={`inline-block mt-3 px-4 py-1 rounded-full font-semibold ${getMembershipColor(
+                    className={`inline-block mt-3 px-4 py-1 rounded-full font-semibold lg:text-[12px] ${getMembershipColor(
                       member.membership
                     )}`}
                   >

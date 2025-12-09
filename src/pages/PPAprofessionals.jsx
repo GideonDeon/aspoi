@@ -49,7 +49,7 @@ function PPAprofessionals() {
         <div className="relative w-full max-w-5xl flex flex-col items-center">
           <div className="relative w-full flex items-center justify-center">
             <button
-              className="absolute left-2 md:left-0 bg-black bg-opacity-30 hover:bg-opacity-60 text-white p-3 md:p-5 rounded-full z-10 shadow-md transition-all cursor-pointer"
+              className="absolute left-2 md:left-0 bg-black/50 hover:bg-black bg-opacity-30 hover:bg-opacity-60 text-white p-3 md:p-5 rounded-full z-10 shadow-md transition-all cursor-pointer"
               onClick={prevImage}
             >
               &#10094;
@@ -65,7 +65,7 @@ function PPAprofessionals() {
             </div>
 
             <button
-              className="absolute right-2 md:right-0 bg-black bg-opacity-30 hover:bg-opacity-60 text-white p-3 md:p-5 rounded-full z-10 shadow-md transition-all cursor-pointer"
+              className="absolute right-2 md:right-0 bg-black/50 hover:bg-black bg-opacity-30 hover:bg-opacity-60 text-white p-3 md:p-5 rounded-full z-10 shadow-md transition-all cursor-pointer"
               onClick={nextImage}
             >
               &#10095;
