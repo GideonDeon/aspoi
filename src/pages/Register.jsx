@@ -7,7 +7,7 @@ const membershipOptions = {
   fieldOperationalMembership: 37500,
   philantropicMembership: 225000,
   professionalMembershipIndividual: 180000,
-  corporateMembership: 750000,
+  corporateMembership: 75000,
 };
 
 function Register() {
@@ -71,7 +71,7 @@ function RegisterPage() {
       formData.append("amount", data.amount);
 
       const res = await fetch(
-        "https://aspoi-backend.vercel.app/api/paystack/initialize",
+        "https://www.aspoi.name.ng/api/paystack/initialize",
         {
           method: "POST",
           body: formData,
