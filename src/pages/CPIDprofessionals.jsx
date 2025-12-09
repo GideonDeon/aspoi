@@ -7,7 +7,7 @@ function CPIDprofessionals() {
       <PageNav />
 
       <main
-        className="relative bg-cover bg-center min-h-[40vh] md:min-h-screen flex items-center justify-center"
+        className="relative bg-cover bg-center min-h-screen flex items-center justify-center"
         style={{ backgroundImage: "url('/images/MaintenanceP.png')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>

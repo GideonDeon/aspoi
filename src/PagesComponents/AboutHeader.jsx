@@ -12,10 +12,10 @@ function Header() {
         </h1>
 
         <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-          We are a non-political, non-armed organization devoted to advancing
-          <span className="text-white font-semibold">safety</span>,
-          <span className="text-white font-semibold">peace</span>, and
-          <span className="text-white font-semibold">protection</span> through
+          We are a non-political, non-armed organization devoted to advancing &nbsp;
+          <span className="text-white font-semibold">safety</span>, &nbsp;
+          <span className="text-white font-semibold">peace</span>, and &nbsp;
+          <span className="text-white font-semibold">protection</span>&nbsp; through
           intelligence, collaboration, and non-violent solutions.
         </p>
       </div>
