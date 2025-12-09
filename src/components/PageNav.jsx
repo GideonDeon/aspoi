@@ -48,7 +48,7 @@ function PageNavMobile() {
         />
 
         <ul
-          className="bg-black w-0 h-100 fixed top-14 right-0 
+          className="bg-black w-0 h-100 fixed top-25 right-0 
             peer-checked:w-[70vw]
             overflow-hidden transition-all duration-500 ease-in-out 
             font-aldrich pl-4 pt-6 space-y-4
