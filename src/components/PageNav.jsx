@@ -48,11 +48,11 @@ function PageNavMobile() {
         />
 
         <ul
-          className="bg-black w-0 h-100 fixed top-25 right-0 
+          className="bg-black w-0 h-100 absolute top-16 -right-5 
             peer-checked:w-[70vw]
             overflow-hidden transition-all duration-500 ease-in-out 
             font-aldrich pl-4 pt-6 space-y-4
-            opacity-0 peer-checked:opacity-100 z-50 border-l border-white/20"
+            opacity-0 peer-checked:opacity-100 z-10 border-l border-white/20"
         >
           {navItems.map(({ to, label }) => (
             <li key={to}>
