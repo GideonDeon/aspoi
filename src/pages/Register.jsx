@@ -71,7 +71,7 @@ function RegisterPage() {
       formData.append("amount", data.amount);
 
       const res = await fetch(
-        "https://www.aspoi.name.ng/api/paystack/initialize",
+        "https://www.aspoi.name.ng/api/flutterwave/initialize",
         {
           method: "POST",
           body: formData,
