@@ -7,7 +7,7 @@ const membershipOptions = {
   fieldOperationalMembership: 37500,
   philantropicMembership: 225000,
   professionalMembershipIndividual: 180000,
-  corporateMembership: 75000,
+  corporateMembership: 750000,
 };
 
 function Register() {
@@ -44,8 +44,8 @@ function RegisterPage() {
 
   const camelToTitleCase = (str) => {
     return str
-      .replace(/([A-Z])/g, " $1") 
-      .trim() 
+      .replace(/([A-Z])/g, " $1")
+      .trim()
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(" ");
@@ -80,8 +80,8 @@ function RegisterPage() {
 
       const result = await res.json();
 
-      if (result.status && result.data.authorization_url) {
-        window.open(result.data.authorization_url, "_blank");
+      if (result.status === "success" && result.data?.link) {
+        window.location.href = result.data.link;
       } else {
         alert("Failed to initialize payment");
       }
@@ -269,7 +269,9 @@ function RegisterPage() {
               selectedMembership ? membershipOptions[selectedMembership] : ""
             }
           />
-          <p className="text-center text-[12px] italic">10% of the registration fee will be paid annually</p>
+          <p className="text-center text-[12px] italic">
+            10% of the registration fee will be paid annually
+          </p>
         </div>
 
         <button
