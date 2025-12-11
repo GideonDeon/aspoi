@@ -9,6 +9,7 @@ Users can register, pay for membership via Flutterwave, and download a PDF recei
 ## Features
 
 - **Frontend (React + Next.js App Router)**
+  - Organization website
   - Registration form with validation (`react-hook-form`)
   - Membership options with automatic amount calculation
   - Image upload with preview before submission
