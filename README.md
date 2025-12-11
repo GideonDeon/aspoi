@@ -3,6 +3,7 @@
 A full‑stack membership registration and payment system built with **Next.js (App Router)**, **React frontend**, **Prisma ORM**, **Supabase Postgres + Storage buckets**, and **Flutterwave payment gateway**.  
 
 Users can register, pay for membership via Flutterwave, and download a PDF receipt after successful payment.
+Visit - https://www.aspoi.com/
 
 ---
 
@@ -19,8 +20,8 @@ Users can register, pay for membership via Flutterwave, and download a PDF recei
   - The backend exposes several API routes under `app/api/` that interact with the Supabase database via Prisma.
   - `POST /api/flutterwave/initialize` → Initializes Flutterwave transaction with metadata
   - `GET /api/flutterwave/verify` → Verifies transaction and saves user record in Supabase via Prisma
-  - `GET /api/flutterwave/members` → fetches members from the database (only those with paymentStatus = "success")
   - `GET /api/debug-user` → fetches all users from the database
+  - `GET /api/flutterwave/members` → fetches members from the database (only those with paymentStatus = "success")
   - File uploads stored in **Supabase Storage bucket** 
 
 - **Database (Supabase Postgres + Prisma)**
@@ -68,7 +69,7 @@ Back-end: Available at https://github.com/GideonDeon/aspoi_backend
 [git clone https://github.com/GideonDeon/aspoi]
 cd aspoi
 
-[git clone [https://github.com/GideonDeon/aspoi_backend]
+[git clone https://github.com/GideonDeon/aspoi_backend]
 cd aspoi_backend
 
 ```
@@ -83,7 +84,7 @@ npm run dev
 
 Open the app in your browser:
 
-https://www.aspoi.com/
+http://localhost:5173/
 
 ## License
 
