@@ -50,7 +50,7 @@ const membershipCards = [
   },
   {
     title: "CORPORATE MEMBERSHIP",
-    price: "₦ 750,000",
+    price: "₦ 500,000",
     period: "Registration fee",
     desc: "CORPORATE MEMBERSHIP is for organizations partnering with ASPOI to ensure safety, protection, and justice globally.",
     note: "Your payment receipt is required to verify your payment",
