@@ -1,65 +1,76 @@
-# ASPOI Members Directory
+# Aspoi Membership Registration System
 
-A React-based members directory for **ASPOI**, showcasing registered members with search and pagination features. The project uses **Tailwind CSS** for styling and supports dynamic membership badges, responsive layouts, and image handling with fallbacks.
+A full‑stack membership registration and payment system built with **Next.js (App Router)**, **React frontend**, **Prisma ORM**, **Supabase Postgres + Storage buckets**, and **Flutterwave payment gateway**.  
 
----
-
-## Table of Contents
-
-- [Demo](#demo)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [License](#license)
-
----
-
-## Demo
-
-> A live demo can be accessed here (aspoi.vercel.app/):
+Users can register, pay for membership via Flutterwave, and download a PDF receipt after successful payment.
+Visit - https://www.aspoi.com/
 
 ---
 
 ## Features
 
-- Fetches member data from a remote API.
-- Responsive grid layout for members (mobile, tablet, desktop).
-- Membership badges with custom colors for each membership type:
-  - FIELD OPERATIONAL MEMBERSHIP → Yellow
-  - PHILANTHROPIC MEMBERS → Purple
-  - PROFESSIONAL MEMBERSHIP INDIVIDUAL → Green
-  - CORPORATE MEMBERSHIP → Gray
-- Search functionality by:
-  - Name
-  - Email
-  - Membership type
-- Pagination with customizable items per page.
-- Graceful fallback for missing images.
-- Modern UI with Tailwind CSS:
-  - Blur and shadow effects for cards
-  - Smooth hover transitions
+- **Frontend (React + Next.js App Router)**
+  - Organization website
+  - Registration form with validation (`react-hook-form`)
+  - Membership options with automatic amount calculation
+  - Image upload with preview before submission
+  - Confirmation page showing payment details and downloadable PDF receipt
+
+- **Backend (Next.js API routes in `./app/api`)**
+  - The backend exposes several API routes under `app/api/` that interact with the Supabase database via Prisma.
+  - `POST /api/flutterwave/initialize` → Initializes Flutterwave transaction with metadata
+  - `GET /api/flutterwave/verify` → Verifies transaction and saves user record in Supabase via Prisma
+  - `GET /api/debug-user` → fetches all users from the database
+  - `GET /api/flutterwave/members` → fetches members from the database (only those with paymentStatus = "success")
+  - File uploads stored in **Supabase Storage bucket** 
+
+- **Database (Supabase Postgres + Prisma)**
+  - Cloud database hosted on Supabase
+  - Prisma schema configured with both pooled (`DATABASE_URL`) and direct (`DIRECT_URL`) connections:
+    - **DATABASE_URL** → Connection pooling via PgBouncer (used in production runtime)
+    - **DIRECT_URL** → Direct connection (used for migrations)
+
+- **Payments (Flutterwave)**
+  - Secure integration with Flutterwave API
+  - Amount automatically converted to kobo before sending
+  - Metadata stored alongside transaction for later verification
+
+- **PDF Receipt**
+  - Confirmation page generates a downloadable PDF receipt using `jsPDF`
+  - Includes user details, membership type, payment status, and amount paid
 
 ---
 
-## Technologies Used
+## 🛠 Tech Stack
 
-- **React** – Frontend library for building UI
-- **Tailwind CSS** – Utility-first CSS framework
-- **React Router** – For routing between pages
-- **Fetch API** – To fetch member data from the backend
-- **Next Backend** – Data source for members API
+- **Frontend:** React, Next.js App Router, TailwindCSS  
+- **Backend:** Next.js API routes (`./app/api`)  
+- **Database:** Supabase Postgres (with Prisma ORM)  
+- **Storage:** Supabase Buckets (for user‑uploaded images)  
+- **Payments:** Flutterwave API  
+- **PDF Generation:** jsPDF  
 
 ---
+
+## Project Structure
+```bash
+
+Front-end: Available in this repo
+
+Back-end: Available at https://github.com/GideonDeon/aspoi_backend
+
+```
 
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/aspoi-members.git
-cd aspoi-members
+[git clone https://github.com/GideonDeon/aspoi]
+cd aspoi
+
+[git clone https://github.com/GideonDeon/aspoi_backend]
+cd aspoi_backend
 
 ```
 
@@ -73,45 +84,7 @@ npm run dev
 
 Open the app in your browser:
 
-https://www.aspoi.com/
-
-Usage
-
-Use the search bar to filter members by name, email, or membership type.
-
-Navigate pages using the Previous/Next buttons.
-
-Membership badges are color-coded to quickly identify membership categories.
-
-Images have a fallback to a placeholder if missing.
-
-## Folder Structure
-
-aspoi-members/
-│
-├─ src/
-│ ├─ components/
-│ │ ├─ PageNav.jsx
-│ │ └─ Footer.jsx
-│ ├─ pages/
-│ │ └─ Members.jsx
-│ ├─ assets/
-│ │ └─ images/
-│ └─ App.jsx
-│
-├─ public/
-│ └─ images/placeholder.jpg
-│
-├─ package.json
-└─ README.md
-
-## Notes
-
-The members API uses endpoint in development:
-
-The project ensures robust image handling with a fallback for any missing images.
-
-Tailwind utility classes allow premium-looking cards with blur, shadows, and hover effects.
+http://localhost:5173/
 
 ## License
 
