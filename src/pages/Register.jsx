@@ -7,7 +7,7 @@ const membershipOptions = {
   fieldOperationalMembership: 37500,
   philantropicMembership: 225000,
   professionalMembershipIndividual: 180000,
-  corporateMembership: 750000,
+  corporateMembership: 500000,
 };
 
 function Register() {
