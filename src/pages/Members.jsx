@@ -94,15 +94,15 @@ function Members() {
         </div>
       </section>
 
-      <main className="max-w-5xl mx-auto p-6">
+      <main className="max-w-5xl mx-auto p-5">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">Members Directory</h2>
+          <h2 className="text-2xl font-bold w-fit">Members</h2>
           <input
             type="text"
-            placeholder="Search by name, email, membership..."
+            placeholder="Search by name or membership"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border px-4 py-2 rounded-lg shadow-sm w-72 focus:ring-2 focus:ring-blue-500 outline-none"
+            className="border px-4 py-2 rounded-lg shadow-sm w-65 sm:w-72 focus:ring-2 focus:ring-blue-500 outline-none"
           />
         </div>
 

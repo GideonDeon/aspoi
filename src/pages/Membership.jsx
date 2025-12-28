@@ -113,7 +113,7 @@ function Body() {
       <main className="bg-gray-50 py-20 px-6 md:px-16 font-roboto text-gray-800">
         <div className="max-w-5xl mx-auto text-center">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-wide">
+            <h2 className="text-2xl md:text-4xl font-extrabold mb-4 tracking-wide">
               MEMBERSHIP CATEGORIES
             </h2>
             <p className="text-gray-700 text-lg md:text-xl mb-12 leading-relaxed">
@@ -134,11 +134,11 @@ function Body() {
               >
                 <div className="p-6 space-y-6 relative">
                   {card.popular && (
-                    <span className="absolute -top-0.5 right-4 bg-black text-white font-bold px-3 py-1.5 rounded-full text-sm shadow-md uppercase tracking-wide">
+                    <span className="absolute -top-0.5 right-4 bg-black text-white font-bold px-2 pt-1 rounded-full text-[12px] shadow-md uppercase tracking-wide">
                       Popular
                     </span>
                   )}
-                  <h3 className={`text-3xl font-extrabold ${card.textColor}`}>
+                  <h3 className={`text-[20px] font-extrabold ${card.textColor}`}>
                     {card.title}
                   </h3>
                   {card.period && (

@@ -21,8 +21,7 @@ function Carousel() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }),
-    [index];
+  }, [index]);
 
   const nextSlide = () => {
     setIndex((prev) => (prev + 1) % dsiOfficers.length);

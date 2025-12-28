@@ -31,7 +31,7 @@ function PageNavMobile() {
   };
 
   return (
-    <div className="flex items-center justify-between bg-black h-25 w-full px-5 lg:hidden relative">
+    <div className="flex items-center justify-between bg-black h-20 w-full px-5 lg:hidden relative">
       <img src="/images/aspoi-logo.png" alt="logo" className="w-13 h-13" />
 
       <div className="relative">
@@ -48,7 +48,7 @@ function PageNavMobile() {
         />
 
         <ul
-          className="bg-black w-0 h-100 absolute top-16 -right-5 
+          className="bg-black w-0 h-100 absolute top-13 -right-5 
             peer-checked:w-[70vw]
             overflow-hidden transition-all duration-500 ease-in-out 
             font-aldrich pl-4 pt-6 space-y-4
