@@ -25,7 +25,7 @@ const membershipCards = [
     desc: "PHILANTHROPIC MEMBERSHIP is for well-meaning and devoted members of the public who sponsor safety and protection initiatives. Philanthropic members may or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment",
     popular: false,
-    bgColor: "bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500",
+    bgColor: "bg-linear-to-r from-indigo-500 via-purple-400 to-purple-300",
     borderColor: "border-indigo-700",
     textColor: "text-white",
     btnBg: "bg-black",
@@ -46,7 +46,7 @@ const membershipCards = [
     btnBg: "bg-black",
     btnHoverBg: "hover:bg-green-600",
     btnText: "text-white",
-    btnHoverText: "hover:text-black",
+    btnHoverText: "hover:text-white",
   },
   {
     title: "CORPORATE MEMBERSHIP",
@@ -61,7 +61,7 @@ const membershipCards = [
     btnBg: "bg-black",
     btnHoverBg: "hover:bg-yellow-600",
     btnText: "text-white",
-    btnHoverText: "hover:text-black",
+    btnHoverText: "hover:text-white",
   },
 ];
 
