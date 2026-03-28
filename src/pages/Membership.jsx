@@ -25,13 +25,13 @@ const membershipCards = [
     desc: "PHILANTHROPIC MEMBERSHIP is for well-meaning and devoted members of the public who sponsor safety and protection initiatives. Philanthropic members may or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment",
     popular: false,
-    bgColor: "bg-linear-to-r from-indigo-500 via-purple-400 to-purple-300",
-    borderColor: "border-indigo-700",
+    bgColor: "bg-linear-to-r from-gray-700 via-gray-600 to-gray-500",
+    borderColor: "border-purple-200",
     textColor: "text-white",
     btnBg: "bg-black",
-    btnHoverBg: "hover:bg-purple-300",
+    btnHoverBg: "hover:bg-purple-200",
     btnText: "text-white",
-    btnHoverText: "",
+    btnHoverText: "hover:text-black",
   },
   {
     title: "PROFESSIONAL MEMBERSHIP INDIVIDUAL",
@@ -40,13 +40,13 @@ const membershipCards = [
     desc: "PROFESSIONAL SERVICE PRACTITIONERS MEMBERSHIP is for serving or retired military, paramilitary, and private security personnel ready to support justice and safety initiatives. May or may not wear ASPOI uniform.",
     note: "Your payment receipt is required to verify your payment",
     popular: true,
-    bgColor: "bg-linear-to-r from-green-400 via-teal-300 to-green-200",
-    borderColor: "border-green-600",
-    textColor: "text-gray-900",
+    bgColor: "bg-linear-to-r from-gray-700 via-gray-600 to-gray-500",
+    borderColor: "border-green-200",
+    textColor: "text-white",
     btnBg: "bg-black",
     btnHoverBg: "hover:bg-green-200",
     btnText: "text-white",
-    btnHoverText: "hover:text-white",
+    btnHoverText: "hover:text-black",
   },
   {
     title: "CORPORATE MEMBERSHIP",
@@ -55,13 +55,13 @@ const membershipCards = [
     desc: "CORPORATE MEMBERSHIP is for organizations partnering with ASPOI to ensure safety, protection, and justice globally.",
     note: "Your payment receipt is required to verify your payment",
     popular: false,
-    bgColor: "bg-linear-to-r from-yellow-400 via-orange-300 to-yellow-200",
-    borderColor: "border-yellow-600",
-    textColor: "text-gray-900",
+    bgColor: "bg-linear-to-r from-gray-700 via-gray-600 to-gray-500",
+    borderColor: "border-yellow-200",
+    textColor: "text-white",
     btnBg: "bg-black",
     btnHoverBg: "hover:bg-yellow-200",
     btnText: "text-white",
-    btnHoverText: "hover:text-white",
+    btnHoverText: "hover:text-black",
   },
 ];
 
@@ -134,8 +134,8 @@ function Body() {
               >
                 <div className="p-6 space-y-6 relative">
                   {card.popular && (
-                    <span className="absolute -top-0.5 right-4 bg-black text-white font-bold px-2 pt-1 rounded-full text-[12px] shadow-md uppercase tracking-wide">
-                      Popular
+                    <span className="absolute top-0.5 right-4 bg-[#D3AF37]  text-white font-bold px-2 pt-1 rounded-full text-[12px] shadow-md tracking-wide">
+                      ⭐ Popular 
                     </span>
                   )}
                   <h3 className={`text-[20px] font-extrabold ${card.textColor}`}>
@@ -161,23 +161,16 @@ function Body() {
                       card.btnHoverText
                     } transition font-semibold text-center ${
                       card.title === "CORPORATE MEMBERSHIP"
-                        ? "mt-0 lg:mt-22"
+                        ? "mt-0 md:mt-20 lg:mt-14"
                         : card.title === "PHILANTHROPIC MEMBERS"
-                        ? "mt-0 lg:mt-17"
+                        ? "mt-0 md:mt-7"
                         : "mt-0"
                     }`}
                   >
                     REGISTER
                   </NavLink>
 
-                  <p
-                    className={`text-sm italic mt-2 ${
-                      card.title === "FIELD OPERATIONAL MEMBERSHIP" ||
-                      card.title === "PHILANTHROPIC MEMBERS"
-                        ? "text-white"
-                        : "text-black"
-                    }`}
-                  >
+                  <p className="text-white italic mt-2">
                     {card.note}
                   </p>
                 </div>
