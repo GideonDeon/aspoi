@@ -1,6 +1,6 @@
 # Aspoi Membership Registration System
 
-A full‑stack membership registration and payment system built with **Next.js (App Router)**, **React frontend**, **Prisma ORM**, **Supabase Postgres + Storage buckets**, and **Flutterwave payment gateway**.  
+A full‑stack membership registration and payment system built with **React frontend**, **Next.js (Backend)**, **Prisma ORM**, **Supabase Postgres + Storage buckets**, and **Flutterwave payment gateway**.  
 
 Users can register, pay for membership via Flutterwave, and download a PDF receipt after successful payment.
 Visit - https://www.aspoi.com/
